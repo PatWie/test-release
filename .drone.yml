@@ -5,6 +5,7 @@ pipeline:
       - dir
   publish:
     image: plugins/github-release
+    pull: true
     secrets: [ github_token ]
     files:
       - README.md
