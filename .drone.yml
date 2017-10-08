@@ -1,0 +1,17 @@
+pipeline:
+  deploy:
+    image: patwie/saccade-static
+    commands:
+      - dir
+  publish:
+    image: plugins/drone-github-release
+    secrets: [ github_token ]
+    files:
+      - README.md
+    checksum:
+      - md5
+      - sha1
+      - sha256
+      - sha512
+      - adler32
+      - crc32
