@@ -3,18 +3,4 @@ pipeline:
     image: patwie/saccade-static
     commands:
       - dir
-  publish:
-    image: plugins/github-release
-    pull: true
-    secrets: [ github_token ]
-    files:
-      - README.md
-    checksum:
-      - md5
-      - sha1
-      - sha256
-      - sha512
-      - adler32
-      - crc32
-    when:
-      event: tag
+      - whoami
